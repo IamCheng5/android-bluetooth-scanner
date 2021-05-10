@@ -49,7 +49,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 public class ScannerFragment extends Fragment {
     final static int PERMISSION_ACCESS_COARSE_LOCATION_CODE = 1001;
     /*View*/

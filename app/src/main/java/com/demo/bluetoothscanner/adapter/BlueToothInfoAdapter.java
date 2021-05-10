@@ -47,6 +47,7 @@ public class BlueToothInfoAdapter extends RecyclerView.Adapter<RecyclerView.View
             }
         }
     };
+
     public void updateData() {
         DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new BlueToothDiff(oldData, newData), true);
         Message message = mHandler.obtainMessage(HANDLER_MESSAGE_UPDATE);

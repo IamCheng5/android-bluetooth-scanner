@@ -25,8 +25,6 @@ public class DetailInfoFragment extends Fragment {
     View fragment;
     public DetailInfoFragment() {
     }
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
