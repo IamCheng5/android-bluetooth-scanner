@@ -27,7 +27,7 @@ public class BlueToothInfoAdapter extends RecyclerView.Adapter<RecyclerView.View
     private static final int HANDLER_MESSAGE_UPDATE = 1;
     private List<BlueToothInfo> oldData;
     private List<BlueToothInfo> newData;
-    ScannerFragment scannerFragment;
+    ScannerFragment scannerFragment ;
 
     public BlueToothInfoAdapter(List<BlueToothInfo> data,ScannerFragment scannerFragment) {
         this.oldData = cloneData(data);
@@ -40,7 +40,7 @@ public class BlueToothInfoAdapter extends RecyclerView.Adapter<RecyclerView.View
         public void handleMessage(@NonNull Message msg) {
             switch (msg.what){
                 case HANDLER_MESSAGE_UPDATE:
-                    oldData.clear();;
+                    oldData.clear();
                     oldData.addAll(cloneData(newData));
                     ((DiffUtil.DiffResult) msg.obj).dispatchUpdatesTo(BlueToothInfoAdapter.this);
                     break;
@@ -53,7 +53,7 @@ public class BlueToothInfoAdapter extends RecyclerView.Adapter<RecyclerView.View
         message.obj = diffResult;
         message.sendToTarget();
     }
-    private List cloneData(List<BlueToothInfo> data){
+    private List<BlueToothInfo> cloneData(List<BlueToothInfo> data){
         List <BlueToothInfo> cloneData = new ArrayList<>();
         for (BlueToothInfo blueToothInfo:data){
             cloneData.add(blueToothInfo.clone());
@@ -67,8 +67,6 @@ public class BlueToothInfoAdapter extends RecyclerView.Adapter<RecyclerView.View
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_info, parent, false);
         return new MyViewHolder(view);
     }
-
-
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         /*
