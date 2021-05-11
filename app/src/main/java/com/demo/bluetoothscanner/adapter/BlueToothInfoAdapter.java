@@ -91,6 +91,7 @@ public class BlueToothInfoAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     }
 
+
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView tvItemInfo;
         public Button btnItemDetail;

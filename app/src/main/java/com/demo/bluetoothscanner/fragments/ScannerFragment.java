@@ -108,6 +108,7 @@ public class ScannerFragment extends Fragment {
             fragment = inflater.inflate(R.layout.fragment_scanner, container, false);
             btnSwitch = fragment.findViewById(R.id.btn_switch);
             recBluetooth = fragment.findViewById(R.id.rec_blue_tooth);
+            recBluetooth.setItemAnimator(null);
             btnSwitch.setOnClickListener(view -> {
                 if (((Button) view).getText().equals("開啟掃描")) {
                     runScanner(true);
